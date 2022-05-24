@@ -18,4 +18,7 @@ If you want to visit our site click on the below link:
 
 https://erchaitanya027.pythonanywhere.com/
 
+For complete source code visit:
+https://github.com/ErChaitanya/CSExplore---Student-s-and-Teacher-s-Portal.git
+
 
