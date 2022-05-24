@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSexplore-Ask me Anything!</title>
+    <link href="{%static 'network/askStyle.css'%}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <div class="contact-box">
+      <div class="body1">
+        <div class="popup center">
+          <div class="icon">
+            <i class="uil uil-check"></i>
+          </div>
+          <div class="title">Success!!</div>
+          <div class="description">
+            Answers regarding this particular question will be provided soon!! 
+          </div>
+          <div class="dismiss-btn">
+            <button id="dismiss-popup-btn">Dismiss</button>
+          </div>
+        </div>
+        <!-- <div class="center">
+          <button id="open-popup-btn">Open Popup</button>
+        </div> -->
+      </div>
+
+      <h1>Ask Me Anything(Anonymously)</h1>
+      <div class="faq"><h4>Some Frequently Asked Questions!</h4></div>
+      <div class="q1">
+        <h3>
+          What are the different Types of Undergraduate degrees?
+          <button type="button" id="open-popup-btn" class="btn1">answer</button>
+        </h3>
+      </div>
+      <div class="q1">
+        <h3>
+          How to apply for college when the final semester certificates have not yet been received? 
+          <button type="button" id="open-popup-btn1" class="btn1">
+            answer
+          </button>
+        </h3>
+      </div>
+      <div class="q1">
+        <h3>
+          What is the transfer applicaton process?
+          <button type="button" id="open-popup-btn2" class="btn1">
+            answer
+          </button>
+        </h3>
+      </div>
+      <div class="q1">
+        <h3>
+          What are the benefits of taking Computer Science branch? 
+          <button type="button" id="open-popup-btn3" class="btn1">
+            answer
+          </button>
+        </h3>
+      </div>
+      <form method="post" action={% url 'ask' %}>
+        {% csrf_token %}
+        <!-- <input type="text" class="input-field" placeholder="Your Name" /> -->
+        <input type="text" class="input-field" id="name" name="name" placeholder="Your Name" required> 
+        <p>Your Question</p>
+        <textarea
+          type="text"
+          class="input-field textarea-field"
+          id = "askme_q"
+          name ="askme_q"
+          placeholder="Enter your Question"
+          required
+        ></textarea>
+        <!-- <input
+          type="text"
+          class="form-control"
+          id = "askme_a"
+          name ="askme_a"
+          placeholder="Enter your answer!!"
+        /> -->
+        <button type="submit" class="btn">Ask Anything</button>
+      </form>
+    </div>
+    <script
+      src="{% static '/network/app1.js' %}"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>
